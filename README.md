@@ -8,8 +8,7 @@ needed) and logged in afterwards. You also have a profile picture, which you can
 profile page
 
 # Important
-The information on anime 
-are taken from https://anilist.co/search/anime/top-100 and the news from: https://www.animenewsnetwork.com/.
+The information on anime are taken from https://anilist.co/search/anime/top-100 and the news from: https://www.animenewsnetwork.com/.
 
 # Technologies used
 React, node, javascript, HTML, vanilla CSS (no premade CSS components, except for menu icon), 
