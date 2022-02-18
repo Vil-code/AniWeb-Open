@@ -1,0 +1,1223 @@
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+:root {
+
+    --background-color-main: #07142B;
+    --header-color: rgb(38, 48, 88);
+    --news-description-grey: rgb(231, 231, 231);
+    --news-main-body: rgb(58, 68, 109);
+    --likes: rgb(58, 68, 109);
+    --select-box: rgb(64, 81, 179);
+    --anime-title: rgb(214, 213, 213);
+    --container-form: rgba(57, 65, 138, 0.8);
+    --button-purple-light: rgb(64, 81, 179);
+    --default-avatar: burlywood;
+    --button-black: #1a1a1b;
+    --comment-container: rgb(68, 60, 104);
+    --anime-desc-2: rgb(29, 36, 41);
+    --error: rgb(105, 83, 165);
+    --settings-span: rgb(90, 96, 129);
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body, .App {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+.App {
+    display: grid;
+   height: 2230px;
+    background-color: var(--background-color-main); 
+    grid-template-columns: repeat(20, minmax(2px, 1fr));
+    grid-template-rows: repeat(20, 60px);
+}
+
+.scroller {
+    width: 300px;
+    height: 100px;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+  }
+
+
+::-webkit-scrollbar-thumb {
+    background: rgb(44, 43, 114);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+
+.header-main  {
+    grid-column: 1 / 21;
+    grid-row: 1 / 2;
+    background-color: var(--header-color);
+    font-weight: 600;
+    min-height: 60px;
+}
+
+.container {
+  
+   grid-column: 1 / 20;
+   grid-row: 4 / 19;
+   display: grid;
+  height: 1760px;
+   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+   grid-template-rows: repeat(20, 340px);
+   grid-auto-flow: dense;
+   overflow-y: auto;
+   -webkit-overflow-scrolling: touch;
+   column-gap: 20px;
+   row-gap: 50px;
+}
+.container-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-rows: repeat(20, 340px);
+    grid-auto-flow: dense;
+    grid-row: 4 / 20;
+    grid-column: 2 / 20;
+   column-gap: 20px;
+    
+    row-gap: 50px;
+    height: 780px;
+    overflow-y: hidden;
+    width:inherit;
+   
+ }
+
+.container .animeobject {
+  max-width: 200px;
+  max-height: 350px;
+  
+    
+}
+
+.container-4 .animeobject {
+    max-width: 270px;
+    height: 340px;
+ }
+.container .animeobject-img {
+    height: 100%;
+}
+
+.container .animeobject-title {
+    position: relative;
+    bottom: 4px;
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+}
+
+.animeobject {
+    animation: fadeIn linear .8s;
+}
+
+.animeobject-description::before {
+    content:'';
+  width:100%;
+  height:100%;    
+  position:absolute;
+  left:0;
+  top:0;
+  background:linear-gradient(360deg, rgb(255, 255, 255) 0.1%, transparent);
+}
+
+.container-2 {
+   grid-column: 3 / 19;
+   grid-row: 4 / 19;
+   display: grid;
+   grid-template-columns: repeat(10, minmax(3px, 1fr));
+   grid-template-rows: repeat(10, 210px);
+   row-gap: 15px;
+   overflow-y: auto;
+   height: 1800px;
+}
+
+.container-5 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(6, 380px);
+    grid-auto-flow: dense;
+    overflow-y: hidden;
+    grid-row: 21 / 32;
+    grid-column: 2 / 20;
+   column-gap: 10px;
+    row-gap: 50px;
+    height: 810px;
+    overflow-y: hidden;
+    font-size: 17.8px;
+    width: inherit;
+}
+
+.container-5 .news-main {
+    width: auto;
+}
+
+
+.filter-anime {
+   grid-column: 3 / 20;
+   grid-row: 3 / 19;
+   display: grid;
+   grid-template-columns: repeat(30, minmax(1px, 1fr));
+   grid-template-rows: repeat(30, 45px);
+   height: 1500px;
+   column-gap: 30px;
+   row-gap: 5px;
+   color: white;
+}
+
+.news-description {
+    
+    overflow: hidden;
+    line-height: 29px;
+    font-size: 17px;
+    margin-bottom: 6px;
+    margin-top: 7px;
+    color: var(--news-description-grey);
+    height: 65%;
+}
+
+.container-2 .news-description {
+    line-height: 34px;
+}
+
+
+.filter-news {
+    grid-column: 3 / 19;
+   grid-row: 3 / 19;
+   display: grid;
+   grid-template-columns: repeat(20, minmax(6px, 1fr));
+    grid-template-rows: repeat(20, 70px);
+    height: 165vh;
+    row-gap: 10px;
+}
+
+.filter-news .news-description {
+    height: 90%;
+    overflow-y: auto;
+}
+
+.filter-news a {
+    position: absolute;
+}
+
+.filter-news .news-title {
+    height: 10%;
+  
+    
+}
+.filter-news a {
+    height: 0%;
+}
+
+.news-main {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.news-title {
+ 
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.news-main a {
+    height: 10%;
+}
+
+.settings a {
+    text-decoration: none;
+    color: white;
+}
+
+.filter-news .news-main {
+    grid-column: 1 / span 20;
+    grid-row: 1 / span 8;
+    background-color: var(--news-main-body);
+    color: white;
+    overflow-y: auto;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.filter-news .comment-container {
+    grid-column: span 20;
+}
+
+.comment-d {
+    color: rgb(221, 219, 219);
+}
+
+.filter-news .news-title {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.filter-news .read-more {
+    display: none;
+}
+
+.ul-header {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    margin-left: 40px;
+    bottom: 25px;
+    height: 40px;
+}
+
+.open-sidebar {
+    background-color: var(--header-color);
+    border: none; 
+    color: white; 
+    padding: 12px 16px; 
+    position: relative;
+    top: 8px;
+    left: 10px;
+    cursor: pointer; 
+    z-index: 5;
+    display: inline-block;
+}
+
+.scroll-menu {
+    grid-column: 5 / 16;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-bar {
+    border: 0;
+    outline: 0;
+    text-indent: 10px;
+    border-radius: 50px;
+    padding: 12px 20px;
+    border: none;
+    height: 2.65em;
+    width: 30%;
+    
+}
+
+.genre-box, .order-box {
+
+    text-align: -webkit-center;
+    text-align:-moz-center;
+    -webkit-appearance: none;
+    background-color: var(--select-box);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 30%;
+    height: 2.65em;
+    margin-right: 10px;
+    border: 0;
+    outline: 0; 
+    min-height: 50px;
+    
+}
+
+
+
+
+.view-animeform, .post-news {
+    background-color: var(--select-box);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 20%;
+    height: 2.65em;
+    border: 0;
+    outline: 0;
+}
+
+.post-news {
+    grid-column: 3;
+    grid-row: 3;
+    color: white;
+    position: relative;
+    bottom: 5px;
+    width: 150px;
+}
+
+
+
+
+.container-4 .animeobject-description {
+    font-size: 17px;
+}
+
+.container-4 .animeobject-title {
+   font-size: large;
+   text-overflow: ellipsis;
+ 
+   display:inline-block;
+   width: 100%;
+   font-size: 14px;
+   position: relative; 
+}
+
+.container-4 .animeobject-img {
+    height: 100%;
+}
+
+.animeobject-img { 
+  position: relative;
+  height: 250px;
+  background-color: rgb(209, 202, 202);
+}
+
+.filter-anime .animeobject-img {
+    background-color: #07142B;
+}
+
+.actual-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.animeobject img, .animeobject2 img {
+   width: 100%;  
+}
+
+.container-4 .animeobject-title, .container .animeobject-title {
+    
+    color: var(--anime-title);
+    padding: 5px;
+    overflow: hidden;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.filter-anime .animeobject-title {
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    bottom: 5px;
+   white-space: nowrap;
+    overflow: auto;
+    
+   
+    margin-bottom: 10px;
+}
+
+.animeobject-title::-webkit-scrollbar-thumb {
+    background: rgb(44, 43, 114);
+    border-radius: 10px;
+}
+
+.animeobject-title::-webkit-scrollbar {
+    height: 5px;
+}
+
+
+
+.title-4 {
+  color: var(--anime-title);
+ 
+ position: absolute;
+ width: 100%;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+ letter-spacing: 3px;
+ font-weight: bold;
+ font-size: 35px;
+
+}
+
+.title-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 1120px;
+    font-size: 35px;
+    color: var(--anime-title);
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.animeobject-img .animeobject-description {
+  
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 0%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  background-color: rgba(0,0,0,0.5);
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  padding: 20px;
+  
+  
+}
+
+.description-main {
+    color: var(--news-description-grey);
+}
+
+.animeobject:hover .animeobject-description {
+    opacity: 1;
+    max-height: 100%;
+}
+
+.footer {
+    grid-row: 36 / 40; 
+    grid-column: 1 / 21;
+    background-color: var(--header-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+li {
+    text-decoration: none;
+    list-style-type: none;   
+}
+
+.header-main a {
+    color: var(--anime-title);
+    text-decoration: none;
+    position: relative;
+    padding: 15px 20px;
+}
+
+.header-main a:hover {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+
+.header-main a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.header-main a:after {
+    content: "";
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    height: 2px;
+    width: 0;
+    bottom: -2px;
+    left: 50%;
+   
+}
+
+.container-2 .news-main {
+    grid-column: span 12;
+    height: 210px;
+}
+
+
+
+.container-2 .news-main, .container-5 .news-main {
+    background-color: var(--news-main-body);
+    color: white;
+    border-radius: 5px;
+    padding: 20px;
+    animation: fadeIn linear .5s;
+    
+}
+
+.news-title {
+    font-weight: bold;
+    font-size: 20px;
+  
+    
+}
+
+form div, form input, form textarea {
+    margin: 10px 0
+}
+
+.about-container {
+   
+   grid-row: 3 / 30;
+   grid-column: 3 / 19;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+  
+}
+
+.about-item {
+    background-color: var(--news-main-body);
+    padding: 20px;
+    border-radius: 15px;
+    font-weight: normal;
+    color: var(--news-description-grey);
+}
+
+.about-title, .about-functions, .about-rules {
+    color: var(--anime-title);
+    font-weight: bold;
+}
+
+.this-site, .this-site-2 {
+    overflow: hidden;
+    height: 47px;
+    transition: height .5s ease-in-out;
+}
+
+.expand-this-site {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+
+.this-site:hover {
+    height: 83px;
+}
+
+.this-site-2:hover {
+    height: 100px;
+}
+
+.this-site:hover .expand-this-site {
+    opacity: 1;
+}
+
+
+.sidebar {
+    background: var(--header-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+    text-align: center;
+    z-index: 5;
+    
+}
+
+.profile-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 55%;
+    background-color: rgba(173, 151, 156, 0.5);
+    margin-right: 1px;
+    
+}
+
+.profile-text {
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+}
+
+
+
+.sidebar ul li a, .sidebar ul li button  {
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid rgb(74, 82, 117);
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+    text-decoration: none;
+    z-index: 5;
+    outline: none;
+    right: 1px;
+    
+}
+
+.sidebar ul li a:hover, .sidebar ul li button:hover {
+    color: #0c7db1;
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+}
+
+.logout, .login, .signup {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    width: 100%;
+    
+}
+
+.gg-close {
+    left: 180px;
+    position: relative;
+    background-color: #898d9e;
+
+}
+
+.container-form, .anime-form, .news-form, .container-form-2, .container-form-user, .picture-form {
+  border-radius: 5px;
+  background-color: var(--container-form);
+  padding: 20px;
+  position: fixed;
+  width: 80vw;
+  height: max-content;
+  left: 50%;
+    transform: translateX(-50%);
+  z-index: 6;
+  
+  box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
+  color: white;
+  display: none;
+}
+
+.login-title {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    display: block;
+  }
+
+input[type=text], select, textarea, input[type=password] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    border-radius: 50px;
+    display: block;
+  }
+
+
+  textarea {
+      border-radius: 25px;
+      padding: 20px;
+  }
+
+  .gg-search {
+      position: relative;
+      right: 930px;
+      top: 19px;
+  }
+
+  .login-button, .change-profile-button, .show-comment-form-news, .change-profile, .create-user-button, .create-anime-button, .create-news-button, .create-comment-button {
+    background-color: var(--button-purple-light);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100px;
+    margin-top: 10px;
+    
+    
+  }
+
+  .show-comment-form-news {
+      width: auto;
+      min-width: 125px;
+  }
+
+  .change-profile {
+    height: 50px;
+    width: 160px;
+    border-radius: 40px;
+    position: relative;
+    top: 15px;
+  }
+
+  .settings-pair {
+      position: relative;
+      left: 10px;
+      top: 20px;
+  }
+
+  .profile-picture {
+    
+    background-color: var(--default-avatar);
+    width: 120px;
+    height: 120px;
+    border-radius: 50px;
+    float: right;
+    position: relative;
+    bottom: 30px;
+    right: 20px;
+   
+}
+
+  .hide-login, .hide-animeform, .hide-newsform, .delete-news, .delete-anime, .show-comment-form {
+    background-color: var(--button-black);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100px;
+    margin-top: 10px; 
+  }
+
+  .delete-news {
+      width: auto;
+      min-width: 125px;
+  }
+
+
+  .read-more {
+      color: rgb(255, 255, 255);
+      
+  }
+
+  .likes {
+      color: white;
+      background-color: var(--likes);
+      border: 2px solid var(--likes);
+      border-radius: 10px;
+      grid-row: 19;
+      grid-column: 14 / 28;
+      
+  }
+
+.filter-anime .animeobject-img {
+    grid-column: 1 / 13;
+    grid-row: 1 / 18;
+    height: 100%;
+}
+
+
+.show-comment-form {
+    background-color: var(--button-purple-light);
+    grid-column: 1 / span 12;
+    width: auto;
+    height: 40px;
+    grid-row: 21 / 22;
+    padding: 0;
+    border-radius: 10px; 
+}
+
+.delete-anime {
+    height: 40px;
+    grid-column: 1 / span 12;
+    width: auto;
+    grid-row: 19 / 20;
+    padding: 0;
+    border-radius: 10px;
+}
+
+
+.all-comments {
+    grid-column: 1 / 28;
+    grid-row: 22 / 30;
+    color: rgb(230, 228, 228);
+    overflow-y: auto;
+    height: 700px;
+}
+
+
+.comment-container {
+    background-color: var(--comment-container);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+   
+    word-wrap: break-word;
+}
+
+
+.animeobject-description-2 {
+    grid-column: 14 / 28;
+    grid-row: 5 / 19;
+    background-color: var(--anime-desc-2);
+    padding: 20px;
+    border-radius: 5px;
+    overflow: auto;
+    margin-bottom: 10px;
+}
+
+.g {
+    background-color: var(--news-main-body);
+    padding: 20px;
+    border-radius: 5px;
+    grid-column: 14 / 28;
+    grid-row: 2 / 5;
+    margin-bottom: 15px;
+    overflow: auto;
+    color: var(--news-description-grey);
+}
+
+.d, .genres-text {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.error {
+    background-color: var(--error);
+    width: 300px;
+    height: 90px;
+    padding: 10px;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: fixed;
+    z-index: 7;
+    margin: 5% auto; 
+    left: 0;
+    right: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: fadeIn linear .9s;
+}
+
+.settings {
+    color: white;
+    grid-column: 3 / 19;
+    grid-row: 3 / 10;
+    display: grid;
+    grid-template-columns: repeat(20, minmax(2px, 1fr));
+    grid-template-rows: repeat(18, 115px);
+    
+}
+
+.posted-news {
+    grid-column: 1 / 21;
+    grid-row: 6 / 9;
+}
+
+.posted-anime {
+    grid-row: 3 / 6;
+    grid-column: 1 / 21;
+}
+
+.posted-comments {
+    grid-column: 1 / 21;
+    grid-row: 9 / 12;
+}
+
+.liked-anime {
+    grid-row: 12 / 15;
+    grid-column: 1 / 21;
+}
+
+.liked-news {
+    grid-row: 15/ 18;
+    grid-column: 1 / 21;
+}
+
+
+.profile-upper, .posted-anime, .posted-comments, .liked-anime, .liked-news, .posted-news {
+    background-color: var(--news-main-body);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.profile-upper {
+    overflow-y: hidden;
+    grid-column: 1 / 21;
+    grid-row: 1 / 3;
+   display: flex;
+   display: inline;    
+}
+
+
+.settings-span {
+    display: block;
+    padding: 15px;
+    background-color: var(--settings-span);
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.filter-news .delete-news {
+    grid-column: 1 / span 4;
+    grid-row: 9;
+    
+}
+.show-comment-form-news {
+    grid-column: 1 / span 4;
+    grid-row: 10 / 11;
+}
+
+.filter-news .all-comments {
+    grid-column: 1 / 21;
+    grid-row: 11 / 20;
+}
+
+
+@media all and (max-width: 1470px) {
+
+   
+  .scroll-menu {
+      flex-direction: column;
+      margin-top: 100px;
+      row-gap: 10px;
+      grid-row: 3;
+  }
+  .order-box, .genre-box {
+      width: 100%;
+  }
+
+
+  .container {
+      grid-row: 7 / 19;
+  }
+    
+  .scroll-menu .view-animeform {
+    width: 100%;
+}
+}
+
+@media all and (max-width: 1200px) {
+
+  
+    .container-5 {
+        font-size: 16px;
+    }
+   
+
+    .container-5 .news-title, .container-2 .news-title {
+        font-size: 16px;
+    }
+
+
+    .filter-anime .animeobject-img {
+        grid-column: 1 / 15;
+        grid-row: 1 / 12;
+    }
+  
+    .g {
+        grid-row: 2 / 5;
+        grid-column: 18 / 33;
+    }
+  
+    .animeobject-description-2 {
+        grid-row: 5 / 13;
+        grid-column: 18 / 33;
+    }
+  
+    .likes {
+        grid-column: 18 / 33;
+      grid-row: 13 / 14;
+    }
+  
+    .show-comment-form {
+      grid-row: 15 / 16;
+      grid-column: 1 / 15;
+      width: auto;
+      height: auto;
+    }
+  
+    .delete-anime {
+      grid-row: 13;
+      grid-column: 1 / 15;
+      width: auto;
+      height: auto;
+    }
+     .filter-anime {
+          grid-template-columns: repeat(35, minmax(1px, 1fr));
+          grid-template-rows: repeat(30, minmax(1px, 1fr));
+          gap: 0;
+         
+     }
+  
+     .all-comments {
+         grid-row: 16/ 30;
+         grid-column: 1 / 33;
+     }
+  
+  }
+
+
+@media all and (max-width: 650px) {
+
+    .settings-pair {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+
+    .change-profile {
+        right: 0;
+    }
+   
+    .container-5 {
+        font-size: 14.2px;
+    }
+   
+    .profile-upper {
+        overflow-y: hidden;
+        grid-column: 1 / 21;
+        grid-row: 1 / 3;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-evenly;
+       align-items: center;
+       
+    }
+
+    .profile-picture {
+        width: 80px;
+        height: 80px;
+        bottom: 0;
+        top: 10px;
+        right: 0px;
+    }
+
+     .posted-anime{
+        grid-row: 4 / 7;
+    } .posted-comments{
+        grid-row: 10 / 13;
+    } .liked-anime{
+        grid-row: 13 / 16;
+    } .liked-news{
+        grid-row: 16 / 19;
+    } .posted-news {
+        grid-row: 7 / 10;
+    } .profile-upper {
+        grid-row: span 3;
+    }
+
+    
+    .open-sidebar {
+        padding: 2px;
+        top: 19px;
+    }
+
+  .ul-header {
+      font-size: 16px;
+      margin-top: 16.5px; 
+  }
+
+  .gg-menu-boxed {
+      width: 15px;
+      height: 15px;
+      border: none;
+  }
+
+  .filter-anime .animeobject-img {
+      grid-column: 1 / 15;
+      grid-row: 1 / 8;
+  }
+
+  .g {
+      grid-row: 9 / 11 ;
+      grid-column: 1 / 15;
+  }
+
+  .animeobject-description-2 {
+      grid-row: 11 / 18;
+      grid-column: 1 / 15;
+  }
+
+  .likes {
+    grid-column: 1 / 15;
+    grid-row: 18 / 19;
+  }
+
+  .show-comment-form {
+    grid-row: 21 / 22;
+    grid-column: 1 / 15;
+    width: auto;
+  }
+
+  .delete-anime {
+    grid-row: 19 / 20;
+    grid-column: 1 / 15;
+    width: auto;
+  }
+   .filter-anime {
+        grid-template-columns: repeat(15, minmax(1px, 1fr));
+        grid-template-rows: repeat(25, minmax(1px, 1fr));
+        gap: 0;
+      
+   }
+
+   .all-comments {
+       grid-row: 22/ 30;
+       grid-column: 1 / 15;
+   }
+    
+    .header-main a::after {
+        visibility: hidden;
+    }
+
+  }
+
+  @media all and (max-width: 530px) {
+
+    .container-4 {
+        display: flex;
+        flex-flow: row wrap;
+        overflow: hidden;
+        grid-column: 5 / span 11;
+        margin-left: 20px;
+    }
+
+
+    .container-5 {
+        display: flex;
+        flex-flow: row wrap;
+        overflow: hidden;
+        grid-column: 3 / 18;
+        margin-left: 20px;
+    }
+
+    .container-5 .news-description {
+        font-size: 16px;
+    }
+
+    .container-5 .news-main {
+        height: 45%;
+    }
+
+  }
+
+  @media all and (max-width: 445px) {
+      .container {
+          width: inherit;
+      }
+  }
