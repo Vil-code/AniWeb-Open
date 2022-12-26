@@ -1,6 +1,6 @@
 # AniWeb
 Link to heroku page
-https://warm-headland-72095.herokuapp.com This is my Fullstack project. It features 
+https://mysterious-citadel-24361.herokuapp.com/ This is my Fullstack project. It features 
 a site, where you can post animation titles and news regarding them. You can also comment on 
 those posts, and view your posts, likes and comments from your own profile. Note that most of the 
 functionality of the site is locked away unless you have signed up (only username and password 
